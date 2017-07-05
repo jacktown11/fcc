@@ -1,0 +1,282 @@
+/* common style */
+a{
+  text-decoration: none;
+}
+p.line{
+  font-weight: bold;
+}
+p.line span{
+  border-bottom: 0.2em solid #888888;
+  position: relative;
+  top: -0.6em;
+} 
+/*  main part  */
+body{
+  font-family: Arial,sans-serif;
+  font-size: medium;
+  background-color: #888888;
+  margin: 0;
+}
+nav#top-navigation{
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 5em;   
+  background-color: #722872;
+  line-height: 5em;
+  box-shadow: #666666 0 2px 2px 1px;
+  z-index: 10;
+
+}
+#main{
+  font-size: 100%;
+  width: 76%;
+  margin: 0 auto 0 auto;
+  box-shadow: #666666 0 0 2px 1px;
+}
+#main>section{
+  font-size: 120%;
+  padding: 2em 3em;
+}
+#about{
+  background-color: #aaaaaa;
+}
+#portfolio,
+#contact{
+  background-color: #eeeeee;
+  color: #888888;
+}
+#portfolio{
+  text-align: center;
+  box-shadow: #888888 0 0 2px 1px;
+}
+#contact{
+  border-top: 2px solid #cccccc;  
+}
+#footer{
+  box-shadow: #666666 0 0 2px 1px;
+}
+#link{
+  background-color: #aaaaaa;
+  color: white;
+}
+
+/* nav */
+nav#top-navigation img{
+  margin-left: 15%;
+  vertical-align: middle;
+  max-height: 3em;
+}
+nav#top-navigation ul{
+  list-style-type: none;
+  float: right;
+  margin: 0 15% 0 0;
+  height: 5em;
+}
+
+nav#top-navigation ul li{
+  display: inline;
+  vertical-align: middle;
+  margin-left: 0.1em;
+  padding: 0.5em 1em;
+  background-color: #e7e7e7;
+}
+
+nav#top-navigation a{
+  color: #777777;
+}
+nav#top-navigation a:visited,
+nav#top-navigation a:hover,
+nav#top-navigation a:active{
+  color: #555555;
+}
+
+
+section#about{
+  color: white;
+  text-align: right;
+  padding-top: 7em;
+  padding-bottom: 2em;
+}
+#about img{
+  width: 26%;
+  margin: 1em;
+  float: right;
+  border-radius: 50%;
+}
+#about p:nth-of-type(1){
+  padding-top: 2em;
+  line-height: 1.5;
+}
+#about p:nth-of-type(2){
+  font-size: 1.1em;
+  font-weight:bold;
+}
+#about p:nth-of-type(2) span{
+  border-bottom: 0.3em solid white;
+  position: relative;
+  top: -0.65em;
+}
+#about p:last-child{
+  font-size: 1.15em;
+}
+#portfolio h1,
+#portfolio p.line{
+  font-size: 150%;
+}
+#portfolio p.pic img{
+  width: 46%;
+  margin:1% 2%;
+}
+
+#contact h1,
+#contact p.line{
+  text-align: center;
+  font-size: 150%;
+}
+#contact:after{
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+#contact{
+  zoom: 1;
+/*  overflow: hidden;*/
+}
+#form,
+#description{
+  width: 45%;
+}
+#form{
+  float: left;
+}
+#form label{
+  font-size: 80%;
+  display: block;
+  margin: 0.5em 0;
+  position: relative;
+  top: 2em;
+  visibility: hidden;
+  color: #722872;
+  -webkit-transition: top 0.3s, visibility 0.3s;
+  -moz-transition: top 0.3s, visibility 0.3s;
+  -o-transition: top 0.3s, visibility 0.3s;
+  transition: top 0.3s, visibility 0.3s;
+}
+#form input,
+#form textarea,
+#form button{
+  font-size: 150%;
+  display: block;
+  color: #666666;
+}
+#form input,
+#form textarea{
+  background: none;
+  background-color: #eeeeee;
+  border: none;
+  border-bottom: 1px solid #888888;
+  width: 80%;
+}
+#form input{
+  height: 1em;
+  padding-bottom: 0.5em;
+}
+#form textarea{
+  font-family: inherit;
+  resize: none;
+}
+#form button{
+  margin: 0.5em 0;
+  font-size: 100%;
+}
+#form input:focus,
+#form textarea:focus{
+  outline: none;
+}
+
+
+#description{
+  float: right;
+}
+
+footer#declare{
+  background-color: #722872;
+  height: 4.17em;
+  font-size: 120%;
+  text-align: center;
+  line-height: 4.17em;  
+  color: white;
+}
+
+#link{
+  zoom: 1;
+  text-align: center;
+}
+#link:after{
+  content: "";
+  height: 0;
+  display: block;
+  clear: both;
+}
+#link .info,
+#link .around{
+  width: 20%;
+  margin: 3% 15%;
+}
+#link .info{
+  float: left;
+}
+#link .info a{
+  color: #722872;
+}
+#link .info a:hover{
+  color: #592059;
+  text-decoration: underline;
+}
+
+#link .around{
+  float: right;
+}
+
+#link ul{
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 150%;
+}
+
+
+#link ul li{
+  background-color: none;
+  color: #722872;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  border: 2px solid white;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+#link ul li:hover{
+  background-color: white;
+}
+#link ul li a{
+  line-height: 2em;
+  color: white;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+#link ul li:hover a{
+  color: #722872;
+}
+
