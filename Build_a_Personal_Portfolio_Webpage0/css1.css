@@ -65,35 +65,39 @@ nav#top-navigation{
 }
 
 /* nav */
-nav#top-navigation img{
+#top-navigation img{
   margin-left: 15%;
   vertical-align: middle;
   max-height: 3em;
 }
-nav#top-navigation ul{
+#top-navigation ul{
   list-style-type: none;
   float: right;
   margin: 0 15% 0 0;
   height: 5em;
 }
 
-nav#top-navigation ul li{
+#top-navigation li{
   display: inline;
   vertical-align: middle;
   margin-left: 0.1em;
   padding: 0.5em 1em;
-  background-color: #e7e7e7;
 }
-
-nav#top-navigation a{
+#top-navigation a{
   color: #777777;
 }
-nav#top-navigation a:visited,
-nav#top-navigation a:hover,
-nav#top-navigation a:active{
+#top-navigation li:hover{
+  box-shadow: #662466 0px 1px 1px 0px; 
+}
+#top-navigation li:hover a{
+  color: #333333;
+}
+#top-navigation li.active{
+  background-color: #e7e7e7;
+}
+#top-navigation li.active a{
   color: #555555;
 }
-
 
 section#about{
   color: white;
