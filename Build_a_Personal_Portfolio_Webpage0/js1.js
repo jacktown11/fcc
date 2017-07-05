@@ -1,5 +1,3 @@
-//no consideration for navigator recept chrome
-
 window.onload = function(){
   changeLabel();
   dynamicNav();
