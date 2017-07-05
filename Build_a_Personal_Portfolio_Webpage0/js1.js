@@ -1,7 +1,8 @@
+//no consideration for navigator recept chrome
+
 window.onload = function(){
   changeLabel();
   dynamicNav();
-  test();
 };
 function changeLabel(){
   //change label's position, color and visibility in form
@@ -96,18 +97,21 @@ function dynamicNav(){
         //and delete other ele's "active" class
         if(typeof activeEle === "object"){
           switch(activeEle){
+            case about:
             case navAbout:
-              addClass(activeEle,"active");
+              addClass(navAbout,"active");
               removeClass(navPortfolio,"active");
               removeClass(navContact,"active");
               break;
+            case portfolio:
             case navPortfolio:
-              addClass(activeEle,"active");
+              addClass(navPortfolio,"active");
               removeClass(navAbout,"active");
               removeClass(navContact,"active");
               break;
+            case contact:
             case navContact:
-              addClass(activeEle,"active");
+              addClass(navContact,"active");
               removeClass(navPortfolio,"active");
               removeClass(navAbout,"active");
               break;
@@ -119,21 +123,22 @@ function dynamicNav(){
           var event = (eve)?eve:window.event;
           if(event.preventDefault){
               event.preventDefault();
-            }else{
+          }else{
               event.returnValue = false;
-            }
-            transiteScrollTop(body,body.scrollTop,navElePos);
-            //sroll the document the navEle's target part
-            updateActiveNav(navEle);
-            //update the nav's look
+          }
+          transiteScrollTop(document.body,
+              document.body.scrollTop,navElePos);
+          //sroll the document the navEle's target part
+          updateActiveNav(navEle);
+          //update the nav's look
         };
       },
       handleScroll = function(){
         //judge which part is in the viewport
         //and update the navigation's look
-        if(body.scrollTop < portfolioTop){
+        if(document.body.scrollTop < portfolioTop){
           updateActiveNav(about);
-        }else if(body.scrollTop < contactTop){
+        }else if(document.body.scrollTop < contactTop){
           updateActiveNav(portfolio);
         }else{
           updateActiveNav(contact);
@@ -143,13 +148,8 @@ function dynamicNav(){
   setNavOnclick(navPortfolio,portfolioTop),
   setNavOnclick(navContact,contactTop);
 
-  if(document.onmouseWheel){
-    document.onmouseWheel = handleScroll;
-  }
-  if(document.onDOMMouseScroll){
-    document.onDOMMouseScroll = handleScroll;
-  }
-
+  document.onmousewheel = handleScroll;
+  document.onDOMMouseScroll = handleScroll;
 }
 
 function getOffsetTop(ele){
@@ -207,10 +207,4 @@ function transiteScrollTop(ele,start,end){
         };
     setTimeout(update,0);
   }
-}
-
-function test(){
-  document.body.scrollTop = 800;
-  console.log(document.body.scrollTop);
-  console.log(document.activeElement.scrollTop);
 }
