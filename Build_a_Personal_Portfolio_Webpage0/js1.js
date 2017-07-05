@@ -92,6 +92,7 @@ function dynamicNav(){
       currentPos = 0,
       portfolioTop = getOffsetTop(portfolio),
       contactTop = getOffsetTop(contact);
+  
   var updateActiveNav = function(activeEle){
         //set the activeEle as "active" class
         //and delete other ele's "active" class
@@ -126,8 +127,7 @@ function dynamicNav(){
           }else{
               event.returnValue = false;
           }
-          transiteScrollTop(document.body,
-              document.body.scrollTop,navElePos);
+          transDocScrollTopTo(navElePos);
           //sroll the document the navEle's target part
           updateActiveNav(navEle);
           //update the nav's look
@@ -136,20 +136,23 @@ function dynamicNav(){
       handleScroll = function(){
         //judge which part is in the viewport
         //and update the navigation's look
-        if(document.body.scrollTop < portfolioTop){
+        if(getDocScrollTop() < portfolioTop){
           updateActiveNav(about);
-        }else if(document.body.scrollTop < contactTop){
+        }else if(getDocScrollTop() < contactTop){
           updateActiveNav(portfolio);
         }else{
           updateActiveNav(contact);
         }
       };
-  setNavOnclick(navAbout,0),
-  setNavOnclick(navPortfolio,portfolioTop),
+
+  setNavOnclick(navAbout,0);
+  setNavOnclick(navPortfolio,portfolioTop);
   setNavOnclick(navContact,contactTop);
 
   document.onmousewheel = handleScroll;
-  document.onDOMMouseScroll = handleScroll;
+  document.onDOMMouseWheel = handleScroll;//for lower edition ff
+  document.onwheel = handleScroll;//for lower edition ff
+  
 }
 
 function getOffsetTop(ele){
@@ -186,22 +189,40 @@ function removeClass(ele,cls){
     ele.className = ele.className.trim();
   }     
 }
-function transiteScrollTop(ele,start,end){
+function getDocScrollTop(){
+  return Number(document.documentElement.scrollTop 
+  || window.pageYOffset 
+  || document.body.scrollTop);
+}
+function setDocScrollTop(height){
+  document.documentElement.scrollTop = height;
+  if(getDocScrollTop() !== height){
+    // unsucceed
+    document.body.scrollTop = height;
+    if(getDocScrollTop() !== height){
+      // unsucceed yet
+      if(window.pageYOffset){
+        window.pageYOffset = height;
+      }
+    }
+  }
+}
+function transDocScrollTopTo(end){
   //change the ele's scrollTop value from start to end gradually
-  if(typeof ele === "object"
-    && typeof start === "number" 
-    && typeof end === "number"){
-    var sign = (end-start)>=0?1:-1,
+  if(typeof end === "number"){
+    var dist = end-getDocScrollTop(), //distance to the target position
+        sign = dist>=0?1:-1,
         nextStep = 1,
         update = function(){
-          var dist = (end-ele.scrollTop);
           if(dist !== 0){
             nextStep *= 2;
-            ele.scrollTop += (nextStep>=sign*(end-ele.scrollTop))?
-            end-ele.scrollTop:
-            sign*(nextStep);                
+            var increase = (nextStep>=sign*dist)?
+                           dist:
+                           sign*(nextStep);  
+            setDocScrollTop(getDocScrollTop()+increase);
           }
-          if((end-ele.scrollTop)!==0){
+          dist = end-getDocScrollTop(); //update dist
+          if(dist !== 0){
             setTimeout(update,100);
           }
         };
