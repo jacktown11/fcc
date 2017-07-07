@@ -1,0 +1,59 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-size: 16px;
+}
+
+#danmu{
+	display: block;
+	width: 90%;
+	height: 400px;
+	margin: 25px auto;
+	border: 1px solid black;
+	position: relative;
+}
+#control{
+	width: 40%;
+	margin: 10px auto;
+}
+#control:after{
+	content: "";
+	height: 0;
+	display: block;
+	clear: both;
+}
+input{
+	display: block;
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+	font-size: 1em;
+	background-color: #fff;
+	border: 1px solid #aaa;
+	border-radius: 0.2em;
+}
+#tosay{
+	width: 80%;
+	height: 2em;
+	line-height: 2em;
+	margin-left: auto;
+	margin-right: auto;
+}
+#submit,
+#clear{
+	width: 30%;
+	height: 2em;
+	line-height: 2em;
+}
+#submit{
+	float: left;
+	margin-left: 18%;
+	color: #E6501E;
+	border-color: #E6501E;
+}
+#clear{
+	float: right;
+	margin-right: 18%;
+	color: #aaa;
+}

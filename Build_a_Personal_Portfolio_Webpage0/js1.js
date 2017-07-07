@@ -154,14 +154,14 @@ function dynamicNav(){
 }
 
 function getOffsetTop(ele){
-        //get element(ele)'s position from the start of the document
-        var top = 0;
-        do{
-          top += ele.offsetTop;
-          ele = ele.offsetParent;
-        }while(ele !== null);
-        return top;
-      }
+  //get element(ele)'s position from the start of the document
+  var top = 0;
+  do{
+    top += ele.offsetTop;
+    ele = ele.offsetParent;
+  }while(ele !== null);
+  return top;
+}
 function addClass(ele,cls){
         if(typeof ele === "object" 
           && typeof cls === "string"
