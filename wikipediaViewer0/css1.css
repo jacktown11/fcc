@@ -1,0 +1,152 @@
+/*基本与全局样式*/
+body{
+	background-color: #092B40;
+	font-size: 18px;
+	color: white;
+	width: 80%;
+	margin: 10px auto;
+}
+ul,li,input,button,h1,h2,h3{
+	margin: 0;
+	padding: 0;
+}
+input,button{
+	border-width: 0;
+	background-color: transparent;
+	color: white;
+	outline: none;
+}
+h1,h2,h3{
+	margin-bottom: 16px;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.off{
+	display:none; 
+}
+
+/*============
+搜索栏部分
+==============*/
+
+#search{
+	text-align: center;
+	margin-top: 200px;
+}
+#search form,
+#search>div,
+#search div.input-box-wrap,
+#search div.input-box{
+	margin-left: auto;
+	margin-right: auto;
+}
+#search button{
+	font-size: 100%;
+	height: 100%;
+}
+#search button:hover{
+	cursor: pointer;
+}
+
+#search>div{
+	margin: 32px auto;
+}
+form{
+	margin: 32px auto;
+}
+
+/*搜索框样式*/
+
+div.input-box-wrap{
+	height: 30px;
+	width: 320px; 
+	position: relative;
+	margin-bottom: 36px;
+}
+div.input-box{
+	width: 30px;
+	height: 100%;
+	position: relative;
+	background-color: #092B40;
+	padding: 0;
+	/*padding: 0px 45px 0 15px;*/ /*展开时*/
+	border-radius: 20px;
+	border: 4px solid #D96F32;
+}
+div.input-box{
+	overflow: hidden;
+	position:relative;
+}
+div.input-box.collpased{
+	cursor: pointer;
+}
+div.input-box input{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	display: none;
+}
+/*放大镜的尾巴*/
+div.input-box-wrap div.tail,
+div.input-box div.close{
+	position: absolute;
+	border-radius: 1px;
+	background-color: #D96F32;
+}
+div.input-box-wrap div.tail{
+	width: 30px;
+	height: 3px;
+	left: 172px;
+	top: 31px;
+	transform: translate(-50%,-50%) rotate(45deg);
+	z-index: -1;
+}
+/*缩小搜索框的叉*/
+div.input-box div.shrink{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	display: none;
+	z-index: 1;
+	cursor: pointer;
+}
+div.input-box div.close{
+	width: 20px;
+	height: 2px;
+	right: -10px;
+	top: 40px;
+	transform: translate(0, -50%) rotate(45deg);
+}
+div.input-box div.close.up{
+	right: -10px;
+	top: -10px;
+	transform: translate(0, -50%) rotate(-45deg);
+}
+
+/*==============
+结果页面部分
+================*/
+#result{
+	display: none;
+}
+#result ul{
+	list-style: none;
+	padding: 0;
+}
+#result li{
+	color: black;
+	padding-left: 6px;
+}
+#result li:hover{
+	background-color: #D86F32;	
+}
+#result li a {
+	padding: 16px 16px 2px 24px;
+	margin: 16px 0 0 0 ;
+	display: block;
+	background-color: #E6E6E7;	
+}
