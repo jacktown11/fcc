@@ -1,0 +1,116 @@
+body{
+	width: 98%;
+	margin: 0 auto;
+	font-size: medium;
+	margin-bottom: 20px;
+}
+header h1{
+	color: #ffa500;
+	text-align: center;
+}
+header h1 img{
+	height: 1em;
+	vertical-align: text-bottom;
+}
+header h1 span{
+	color: #686868;
+}
+section#today,
+section#future{
+	text-align: center;
+	border-radius: 1em;
+	padding: 2em;
+}
+section#today{
+	background-color: #a2e2e2;
+}
+section#today h2{
+	margin-bottom: 0;
+}
+section#today h2 span{
+	font-size: 50%;
+	font-weight: normal;
+}
+section#today div.info{
+	text-align: right;
+	font-size: 100%;
+	padding-right: 4em;
+}
+section#today button{
+	border: 0;
+}
+section#today button.dropdown-toggle{
+	background-color: transparent;
+	color: white;
+}
+section#today input{
+	vertical-align: middle;
+	background-color: white;
+	border: 1px solid #aaa;
+	border-radius: 0.2em;
+	outline: none;
+	width: 5em;
+	padding: 5px 0 5px 0.3em; 
+}
+section#today #modify{
+	margin-right: 4em;
+	background-color: #fafafa;
+	padding: 1em;
+}
+section#today div.weather{
+	background: rgba(0,0,255,0.4);
+	color: white;
+	padding: 0.6em 0;
+	font-weight: bold;
+}
+section#today div.weather img{
+	height: 1.4em;
+}
+section#today table{
+	width: 100%;
+}
+section#today table tr{
+	height: 2em;
+	line-height: 2em;
+}
+section#today table td:first-child{
+	padding-right: 1em;
+	text-align: right;
+	width: 50%;
+}
+section#today table td:last-child{
+	text-align: left;
+	padding-left: 1.5em;
+}
+
+section#future{
+	background-color: #cdd6ea;
+}
+section#future p.day-range{
+	text-align: right;
+	margin-right: 4em;
+}
+section#future div.row div{
+	padding-bottom: 2em;
+}
+
+section#fail-info{
+	display: none;
+	background-color: rgba(236,224,230,1);
+	width: 100%;
+	position:fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    text-align: center;
+    box-shadow: 0 1px 3px 0px #888;
+}
+
+section#fail-info p:last-of-type{
+	margin-top: 1em;
+	margin-bottom: 0;
+}
+section#fail-info button{
+	margin: 0 0.5em;
+}
