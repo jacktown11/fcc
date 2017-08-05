@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>calculator</title>
+	<link rel="stylesheet" href="css/reset.min.css">
+	<link rel="stylesheet" href="css/css1.min.css">
+</head>
+<body>
+	<div id="calculator">
+		<h1><a href="https://jacktown11.github.io/" target="_black">jacktown</a>'s calculator</h1>
+		<div class="output">
+			<div>
+				<span></span>
+			</div>
+		</div>
+		<p class="alert">
+			Illegal Expression!
+		</p>
+		<table>
+			<tr>
+				<td data-mask="clear">clear</td>
+				<td data-mask="back">back</td>
+				<td data-mask="%">%</td>
+				<td data-mask="divide">&divide;</td>
+			</tr>
+			<tr>
+				<td data-mask="7">7</td>
+				<td data-mask="8">8</td>
+				<td data-mask="9">9</td>
+				<td data-mask="times">&times;</td>
+			</tr>
+			<tr>
+				<td data-mask="4">4</td>
+				<td data-mask="5">5</td>
+				<td data-mask="6">6</td>
+				<td data-mask="minus">&minus;</td>
+			</tr>
+			<tr>
+				<td data-mask="1">1</td>
+				<td data-mask="2">2</td>
+				<td data-mask="3">3</td>
+				<td rowspan="2" data-mask="+"><span>+</span></td>
+			</tr>
+			<tr>
+				<td data-mask="0">0</td>
+				<td data-mask=".">.</td>
+				<td data-mask="=">=</td>
+			</tr>
+		</table>		
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/js1.js"></script>
+</body>
+</html>
