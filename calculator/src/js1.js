@@ -64,7 +64,11 @@ var paraJack = {
 		//输入一个字符,str是代表字符的字符串，如对于字符串‘-’是‘&minus;’
 		if(typeof str === 'string'){
 			if(data.isCalculated){
-				paraJack.method.clearStr();
+				//当前有计算结果，把这个结果作为第一个操作数
+				data.strArr = [data.result];
+				data.currentStr = data.result;
+				data.result = '';
+				data.isCalculated = false;
 			}
 			switch(str){
 				case '&minus;':
@@ -133,6 +137,8 @@ var paraJack = {
 			lastWord = '',
 			lastChar = '';
 		if(!data.isCalculated){
+			//还未计算显示结果
+
 			//取得最后保存在字符串数组中的字符串，保存到str中，
 			//并将其从数组中删除
 			//(删除最后一个元素或最后一个元素的字符)
@@ -401,7 +407,7 @@ var paraJack = {
 		
 		if(lenOrigin > 0 && isStrLegal){
 			data.isCalculated = true;
-			return data.result = parseFloat(strArr[0],16)/Math.pow(10,strArrPow[0]);
+			return data.result = String(parseFloat(strArr[0],16)/Math.pow(10,strArrPow[0]));
 		}else{
 			return '';
 		}
@@ -488,6 +494,6 @@ var paraJack = {
 })();
 
 $(document).ready(function(){
-	paraJack.dom.setEvent();
+	paraJack.dom.setEvent();	
 });
 
