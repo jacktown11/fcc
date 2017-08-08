@@ -1,0 +1,132 @@
+body{
+	width: 500px;
+	padding: 10px;
+	margin: auto;
+	text-align: center;
+	background-color: #333333;
+	color: white;
+	font-size: 150%;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus{
+	text-decoration: none;
+	color: #ff6600;
+}
+a:hover,
+a:focus{
+	border-bottom: 2px dotted #ff6600;
+}
+
+header{
+	color: #ff8800;
+}
+.control{
+	margin-bottom: 18px;
+	color: #ccc;
+	position: relative;
+}
+.control .active{
+	color:#99cc00;
+}
+.control h3{
+	margin: 0 auto;
+}
+.control p{
+	font-size: 120%;
+	margin: 6px 0;
+}
+.control span.time-len{
+	display: inline-block;
+	width: 50px;
+}
+.control .add,
+.control .minus{
+	cursor: pointer;
+	padding: 0 5px;
+}
+.control .swap{
+	color: #446600;
+	cursor: pointer;
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	font-size: 150%;
+	-ms-transform: translate(-50%,-50%); /* IE 9 */
+	-webkit-transform: translate(-50%,-50%); /* Safari and Chrome */
+	transform: translate(-50%,-50%);
+}
+.control .swap:hover{
+	color: #99cc00;
+}
+.time-show{
+	position: relative;
+}
+.time-show>div{
+	height: 80px;
+	position: relative;
+}
+.top,
+.bot{
+	background-color: white;
+	border-radius: 40px 4px 0 40px;
+	box-shadow: 0 0 4px 0 black inset;
+	overflow: hidden;
+}
+.mid{
+	background-color: transparent;
+	line-height: 80px;
+	font-size: 40px;
+	font-family: serif;
+}
+.mid span{
+	display: inline-block;
+	padding: 0 8px;
+}
+.mid .switch{
+	cursor: pointer;
+	font-size: 80%;
+}
+.piston{
+	position: absolute;
+	right: -4px;
+	top: 20%;
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	background: -webkit-radial-gradient(white,black); /* Safari 5.1 - 6.0 */ 
+	background: -o-radial-gradient(white,black); /* Opera 11.6 - 12.0 */ 
+	background: -moz-radial-gradient(white,black); /* Firefox 3.6 - 15 */ 
+	background: radial-gradient(white,black); /* 标准的语法 */ 
+}
+.time-show .inner{
+	position: absolute;
+	width: 100%;
+	height: 100%;	
+	left: 0;
+	bottom: 0;
+}
+.top .inner{
+	background-color: #99CC66;
+	height: 30%;
+}
+.bot .inner{
+	background-color: #ff8800;
+	height: 70%;
+}
+.time-show .right{
+	height: 160px;
+	width: 8px;
+	background-color: white;
+	position:absolute;
+	bottom: 0px;
+	right: 0px;
+	background: transparent;
+	background: -webkit-linear-gradient(top, #99CC66,#ff8800,#ff8800 ); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(bottom,#99CC66, #ff8800,#ff8800); /* Opera 11.1 - 12.0 */ 
+	background: -moz-linear-gradient(bottom,#99CC66, #ff8800,#ff8800); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to bottom, #99CC66,#ff8800,#ff8800); /* 标准的语法 */ 
+}
