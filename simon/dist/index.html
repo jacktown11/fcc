@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>simon</title>
+	<link rel="stylesheet" href="css/css1.css">
+</head>
+<body>
+	<div class="main">
+		<div class="color-block red" data="red"></div>
+		<div class="color-block blue" data="blue"></div>
+		<div class="color-block green" data="green"></div>
+		<div class="color-block yellow" data="yellow"></div>
+		<div class="control">
+			<h1>SIMON</h1>
+			<div class="count">
+				<span></span>
+			</div>
+			<button type="button" class="start">start</button>
+			<div class="switch mode">
+				<span class="left">normal</span>
+				<div class="slide">
+					<div class="inner"></div>
+				</div>
+				<span class="right">strict</span>
+			</div>
+			<div class="switch on-off">
+				<span class="left">OFF</span>
+				<div class="slide">
+					<div class="inner"></div>
+				</div>
+				<span class="right">ON</span>
+			</div>
+		</div>
+	</div>
+	<div class="success">
+		<p>
+			Congratulations!<br> You Win The Game!!!
+		</p>
+		<button type="button">close</button>
+	</div>
+	<div class="mp3">
+		<audio id="error">
+		  <source src="mp3/error.mp3" type="audio/mpeg">
+		  <source src="mp3/error.wav">		  
+		</audio>
+	</div>
+	<div class="footer">
+		coded by <a href="https://jacktown11.github.io/" target="_blank">jacktown</a>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/js1.js"></script>
+</body>
+</html>

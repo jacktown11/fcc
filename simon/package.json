@@ -1,0 +1,22 @@
+{
+  "name": "pamodero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "*",
+    "gulp-uglify": "*",
+    "gulp-concat": "*",
+    "gulp-rename": "*",
+    "pump": "*",
+    "jquery": "1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
