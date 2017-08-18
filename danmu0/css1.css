@@ -13,6 +13,7 @@ body{
 	margin: 25px auto;
 	border: 1px solid black;
 	position: relative;
+	overflow: hidden;
 }
 #control{
 	width: 40%;
