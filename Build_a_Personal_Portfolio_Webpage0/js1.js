@@ -1,3 +1,5 @@
+//使用原生js无插件版本
+
 window.onload = function(){
   changeLabel();
   dynamicNav();
@@ -126,7 +128,7 @@ function dynamicNav(){
               event.returnValue = false;
           }
           transDocScrollTopTo(navElePos);
-          //sroll the document the navEle's target part
+          //sroll the document to the navEle's target part
           updateActiveNav(navEle);
           //update the nav's look
         };
@@ -150,9 +152,7 @@ function dynamicNav(){
   document.onmousewheel = handleScroll;
   document.onDOMMouseWheel = handleScroll;//for lower edition ff
   document.onwheel = handleScroll;//for lower edition ff
-  
 }
-
 function getOffsetTop(ele){
   //get element(ele)'s position from the start of the document
   var top = 0;
@@ -163,16 +163,16 @@ function getOffsetTop(ele){
   return top;
 }
 function addClass(ele,cls){
-        if(typeof ele === "object" 
-          && typeof cls === "string"
-          && cls.length > 0)
-        {
-          var pos = -1;
-          if(!ele.className || (pos = ele.className.indexOf(cls)) < 0){
-            ele.className += " " + cls;
-          }
-        }
-      }
+  if(typeof ele === "object" 
+    && typeof cls === "string"
+    && cls.length > 0)
+  {
+    var pos = -1;
+    if(!ele.className || (pos = ele.className.indexOf(cls)) < 0){
+      ele.className += " " + cls;
+    }
+  }
+}
 function removeClass(ele,cls){
   if(typeof ele === "object" 
     && typeof cls === "string" 
@@ -208,7 +208,19 @@ function setDocScrollTop(height){
 function transDocScrollTopTo(end){
   //change the ele's scrollTop value from start to end gradually
   if(typeof end === "number"){
-    var dist = end-getDocScrollTop(), //distance to the target position
+
+    //这里为函数添加了一个save属性，上次调用该函数时内部最新的间歇调用id
+    //再次调用该函数是应该清除掉之前的间歇调用(否则可能发生冲突)
+    //这里timer要保存在对象中是因为，要在update闭包中使用它，
+    //此时不能只写使用arguments.callee了，而要通过对象引用的方式来共享该数据
+    if(!!arguments.callee.save){
+      clearTimeout(arguments.callee.save.timer);
+    }else{
+      arguments.callee.save = {};
+    }
+        
+    var save = arguments.callee.save,
+        dist = end-getDocScrollTop(), //distance to the target position
         sign = dist>=0?1:-1,
         nextStep = 1,
         update = function(){
@@ -221,9 +233,9 @@ function transDocScrollTopTo(end){
           }
           dist = end-getDocScrollTop(); //update dist
           if(dist !== 0){
-            setTimeout(update,100);
+            save.timer = setTimeout(update,100);
           }
         };
-    setTimeout(update,0);
+    save.timer = setTimeout(update,0);
   }
 }
